@@ -16,6 +16,6 @@ if (password_verify("Some_Password",
     '$2y$10$rZervNEbrjRg5bl3jHnBpeJcpbytOajaz.bCdO.cEoQeRz4zyspD6')){
     echo 'Correct password!';
 }else{
-    echo 'Incorrect password!';
+    echo 'Incorrect password';
 }
 
