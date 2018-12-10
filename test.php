@@ -18,6 +18,6 @@ if (password_verify("Some_Password",
 }else{
     echo 'Incorrect password<br />';
     echo 'One more change';
-    echo 'Hello again';
+    echo 'One more change to do, i hope it is the last...';
 }
 
