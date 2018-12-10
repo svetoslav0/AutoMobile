@@ -1,18 +1,9 @@
-<form method="post">
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td><input type="text" / ></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="password" /></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Login"></td>
-        </tr>
-    </table>
-</form>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Svetoslav
+ * Date: 10-Dec-18
+ * Time: 8:45 PM
+ */
 
-
-If you don't have an account, please <a href="register.php">register</a>
+include_once ('views/login.view.php');
