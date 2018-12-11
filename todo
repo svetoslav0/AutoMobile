@@ -1,0 +1,45 @@
+index:
+    - menu (navbar, header)
+    - list of all cars - short info
+        - image
+        - name of the ad
+        - short desc
+        - author
+    - footer
+
+add-car:
+    - add car form
+        - car brand
+        - year
+        - image
+        - desc
+        - ...
+
+my-cars:
+    - CRUD (create, read, update, delete)
+
+profile:
+    - view all user data
+    - update user data
+        - email
+        - password
+        - first and last name
+
+contact-us:
+    - contact-form (Message):
+        - Title
+        - Content
+
+about-us:
+    - project and devs desc
+
+footer:
+   - contacts
+   - sitemap
+   - go to the top
+
+amdin:
+   - view and CRUD all ads
+   - messages
+        - if any: notification, noty icon on 'messages' link
+

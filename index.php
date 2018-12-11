@@ -21,6 +21,7 @@ include_once('views/header.view.php');
 
 <p>
 	This is index content page
+    <?= var_dump($_SESSION) ?>
 </p>
 
 
