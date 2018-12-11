@@ -15,15 +15,14 @@ if (isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $db->prepare("SELECT id, username, password FROM users WHERE username=:username");
+    $stmt = $db->prepare("SELECT id, username, password, first_name, last_name FROM users WHERE username=:username");
     $stmt->bindParam('username', $username);
     $stmt->execute();
     $result = $stmt->fetchObject();
     $hash = $result->password??null;
 
     if (password_verify($password, $hash)){
-        $_SESSION['user_id'] = $result->id;
-        var_dump($_SESSION);
+        $_SESSION['id'] = $result->id;
         header('Location: index.php');
         exit;
     }else{

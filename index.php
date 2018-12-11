@@ -10,10 +10,21 @@ session_start();
 
 include "db_connect.php";
 
-if (!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['id'])){
     header("Location: login.php");
     exit;
 }
 
-echo 'This is index page :)';
-var_dump($_SESSION);
+include_once('views/header.view.php');
+?>
+
+
+<p>
+	This is index content page
+</p>
+
+
+<?php
+include_once('views/footer.view.php');
+?>
+
