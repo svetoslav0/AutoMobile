@@ -6,11 +6,14 @@
  * Time: 10:27 AM
  */
 
+session_start();
+
 include "db_connect.php";
 
-$self = str_replace(basename(__FILE__), '', $_SERVER['PHP_SELF']);
-$url_parts = explode('/', str_replace($self, '', $_SERVER['REQUEST_URI']));
+if (!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit;
+}
 
-$controller_name = array_shift($url_parts);
-
-header("Location: $controller_name");
+echo 'This is index page :)';
+var_dump($_SESSION);

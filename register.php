@@ -29,7 +29,7 @@ if (isset($_POST['submit'])){
 
     $result->execute();
 
-    header("Location: login.view.php");
+    header("Location: login.php");
 }
 
 function validate($username, $password, $conf_password, $email){
