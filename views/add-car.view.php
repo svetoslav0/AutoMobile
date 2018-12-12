@@ -5,21 +5,21 @@
 
 <form method="get">
     Марка:
-    <input type="text" name="brand" />
+    <input type="text" name="brand" /><br />
     Модел:
-    <input type="text" name="model" />
-    Състояние:
-    <input type="checkbox" name="new_car" />Нов
-    <input type="checkbox" name="used_car" />Употребяван
-    <input type="checkbox" name="for_parts" />За части
+    <input type="text" name="model" /><br />
+    Състояние:<br />
+    <input type="checkbox" name="new_car" />Нов<br />
+    <input type="checkbox" name="used_car" />Употребяван<br />
+    <input type="checkbox" name="for_parts" />За части<br />
     Година на производство:
-    <input type="text" name="release_year" />
+    <input type="text" name="release_year" /><br />
     Цена:
-    <input type="text" name="price" />
+    <input type="text" name="price" /><br />
     Мощност:
-    <input type="text" name="power" />
+    <input type="text" name="power" /><br />
     Кубатура:
-    <input type="text" name="engine_volume" />
+    <input type="text" name="engine_volume" /><br />
     Категория:
     <!-- select of ван, кабрио, седан.... -->
     Евростандарт:

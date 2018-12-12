@@ -7,7 +7,7 @@
  */
 
 session_start();
-
+spl_autoload_register();
 include "db_connect.php";
 
 if (!isset($_SESSION['id'])){
@@ -22,6 +22,10 @@ include_once('views/header.view.php');
 <p>
 	This is index content page
     <?= var_dump($_SESSION) ?>
+    <?php
+        var_dump(Repository::getAll($db, 'extras'));
+
+    ?>
 </p>
 
 

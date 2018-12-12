@@ -11,6 +11,7 @@ include_once ('conf.php');
 try{
     $db = new PDO("mysql:host=" . DOMAIN . ";dbname=" . DBNAME, USERNAME, PASSWORD);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->query("SET NAMES UTF8");
     //echo "Successfully connected.<br>";
 }catch (PDOException $e){
     echo 'Connection failed: ' . $e->getMessage();
