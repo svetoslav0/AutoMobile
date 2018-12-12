@@ -1,34 +1,80 @@
-<h2>Register:</h2>
-    <hr>
+
 <form method="post">
-    <table>
-        <tr>
-            <td>Username: <span style="color: red">*</span></td>
-            <td><input type="text" name="username" /></td>
-        </tr>
-        <tr>
-            <td>Password: <span style="color: red">*</span></td>
-            <td><input type="password" name="password" /></td>
-        </tr>
-        <tr>
-            <td>Confirm password: <span style="color: red">*</span></td>
-            <td><input type="password" name="confirm_password" /></td>
-        </tr>
-        <tr>
-            <td>Email: <span style="color: red">*</span></td>
-            <td><input type="text" name="email" /></td>
-        </tr>
-        <tr>
-            <td>First name:</td>
-            <td><input type="text" name="first_name" /></td>
-        </tr>
-        <tr>
-            <td>Last name:</td>
-            <td><input type="text" name="last_name" /></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="Register" name="submit" /></td>
-        </tr>
-    </table>
+
+<div class="container">
+            <div class="row main">
+                <div class="main-login main-center">
+                <h2>Регистрирайте се</h2>
+
+                    <form class="" method="post" action="#">
+                        <div class="form-group">
+                            <label for="username" class="cols-sm-2 control-label">Потребителско име</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Въведете потребителско име" name="username"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="cols-sm-2 control-label">Парола</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Въведете парола"  name="password"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm" class="cols-sm-2 control-label">Потвърдете парола</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Потвърдете паролата" name="confirm_password"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="cols-sm-2 control-label">Имейл</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="email" id="email"  placeholder="Въведете имейла си" name="email"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Име</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Въведете име" name="first_name"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Фамилия</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Въведете фамилия" name="last_name"/>
+                                </div>
+                            </div>
+                        </div>                        
+
+                        <div class="fоrm-group">
+                        <input type="submit" value="Регистрирайте се!" class="btn float-right login_btn" name="submit">
+                    </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
 </form>
+
 

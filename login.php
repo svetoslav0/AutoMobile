@@ -7,6 +7,7 @@
  */
 
 session_start();
+include_once('views/header.view.php');
 
 include_once ('views/login.view.php');
 include_once ('db_connect.php');
