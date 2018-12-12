@@ -1,17 +1,19 @@
-<?php include_once ('header.view.php'); ?>
+
 
 <h1>Add new car advertisement</h1>
 <hr>
 
-<form method="get">
+<form method="POST" enctype='multipart/form-data'>
+    Снимка:
+    <input type="file" name="fileToUpload" /><br />
     Марка:
     <input type="text" name="brand" /><br />
     Модел:
     <input type="text" name="model" /><br />
     Състояние:<br />
-    <input type="checkbox" name="new_car" />Нов<br />
-    <input type="checkbox" name="used_car" />Употребяван<br />
-    <input type="checkbox" name="for_parts" />За части<br />
+    <input type="radio" name="state" value="new_car" />Нов<br />
+    <input type="radio" name="state" value="used_car" checked />Употребяван<br />
+    <input type="radio" name="state" value="for_parts" />За части<br />
     Година на производство:
     <input type="text" name="release_year" /><br />
     Цена:
@@ -47,12 +49,12 @@
         <p><strong><?= $extra_type->extra_type ?></strong></p>
         <?php $extras = Repository::getSome($db, 'extras', 'type_id', $extra_type->id) ?>
         <?php foreach ($extras as $extra): ?>
-            <input type="checkbox" name="<?= $extra->id ?>" id="<?= $extra->id ?>">
+            <input type="checkbox" name="<?= $extra->id ?>" id="<?= $extra->id ?>" value="<?= $extra->id ?>">
                 <label for="<?= $extra->id ?>"><?= $extra->extra ?></label><br />
         <?php endforeach; ?>
     <?php endforeach; ?>
 
-    <button type="button" class="btn btn-success">Публикувай</button>
+    <input type="submit" value="Публикувай" name="add_car_button" />
 </form>
 
 <?php include_once ('footer.view.php'); ?>
