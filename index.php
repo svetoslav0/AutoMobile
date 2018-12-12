@@ -23,6 +23,7 @@ include_once('views/header.view.php');
 	This is index content page
     <?= var_dump($_SESSION) ?>
     <?php
+    var_dump($_SERVER);
         var_dump(Repository::getAll($db, 'extras'));
 
     ?>

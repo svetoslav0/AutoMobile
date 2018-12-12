@@ -21,22 +21,38 @@
     Кубатура:
     <input type="text" name="engine_volume" /><br />
     Категория:
-    <!-- select of ван, кабрио, седан.... -->
+    <?= HTMLBuilder::getAllOptions($db, 'categories', 'name') ?>
+    <br />
     Евростандарт:
-    <!-- eurostandarts' select -->
+    <?= HTMLBuilder::getAllOptions($db, 'eurostandarts', 'name') ?>
+    <br />
     Тип двигател:
-    <!-- engine type select -->
+    <?= HTMLBuilder::getAllOptions($db, 'engines', 'type') ?>
+   <br />
     Скоростна кутия:
-    <!-- gear type select -->
+    <?= HTMLBuilder::getAllOptions($db, 'gears', 'type') ?>
+    <br />
     Пробег в км:
-    <input type="text" name="mileage" />
+    <input type="text" name="mileage" /><br />
     Цвят:
-    <!-- colors select -->
+    <?= HTMLBuilder::getAllOptions($db, 'colors', 'color') ?>
+    <br />
     Град:
-    <!-- town select -->
+    <?= HTMLBuilder::getAllOptions($db, 'towns', 'town') ?>
+    <br />
     <hr>
     Допълнителни:
-    <!-- extras' select -->
+    <?php $extra_types = Repository::getAll($db, 'extra_types');
+    foreach ($extra_types as $extra_type) : ?>
+        <p><strong><?= $extra_type->extra_type ?></strong></p>
+        <?php $extras = Repository::getSome($db, 'extras', 'type_id', $extra_type->id) ?>
+        <?php foreach ($extras as $extra): ?>
+            <input type="checkbox" name="<?= $extra->id ?>" id="<?= $extra->id ?>">
+                <label for="<?= $extra->id ?>"><?= $extra->extra ?></label><br />
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+
+    <button type="button" class="btn btn-success">Публикувай</button>
 </form>
 
 <?php include_once ('footer.view.php'); ?>

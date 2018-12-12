@@ -5,7 +5,10 @@
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
-
+<?php
+    include_once ($_SERVER['DOCUMENT_ROOT'] . '\db_connect.php');
+    spl_autoload_register();
+?>
 <div style="background-color: lightblue">
 	Welcome,
 	<?= $_SESSION['first_name'] ?>
