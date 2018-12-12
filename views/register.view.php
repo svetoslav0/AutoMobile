@@ -69,6 +69,12 @@
                         <div class="fоrm-group">
                         <input type="submit" value="Регистрирайте се!" class="btn float-right login_btn" name="submit">
                     </div>
+                    <div class="h7"
+                    <h7> Вече имате профил? <br /> </h7>
+                </div>
+                <div class="sign">
+                     <a href="login.php">Влезте!</a>
+                </div>
                         
                     </form>
                 </div>
