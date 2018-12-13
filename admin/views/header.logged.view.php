@@ -28,8 +28,15 @@ if (isset($_SESSION['id'])) : ?>
       <li class="nav-item">
         <a class="nav-link" href="../add-car.php">Добави нова обява!</a>
       </li>
+        <?php $unseenMessages = Repository::getRowsCountWithCondition($db, 'admin_messages', 'isSeen', '0'); ?>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="/admin/messages.php">
+            <?php if($unseenMessages != 0) : ?>
+                <strong>Съобщения(<?= $unseenMessages ?>)</strong>
+            <?php else : ?>
+                Съобщения(0)
+            <?php endif; ?>
+        </a>
       </li>
     </ul>
     <span class="navbar-text">

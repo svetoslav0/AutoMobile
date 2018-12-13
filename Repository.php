@@ -31,8 +31,15 @@ class Repository
         }
         return $result;
     }
+
     public static function getRowsCount(PDO $db, $table){
         $stmt = $db->query("SELECT count(*) AS count FROM {$table}");
+        $count = $stmt->fetchObject()->count;
+        return $count;
+    }
+
+    public static function getRowsCountWithCondition(PDO $db, $table, $condition, $value){
+        $stmt = $db->query("SELECT count(*) AS count FROM {$table} WHERE {$condition}={$value}");
         $count = $stmt->fetchObject()->count;
         return $count;
     }

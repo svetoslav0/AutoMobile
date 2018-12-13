@@ -9,6 +9,7 @@
 <?php
     include_once ($_SERVER['DOCUMENT_ROOT'] . '\db_connect.php');
     spl_autoload_register();
+    date_default_timezone_set('Europe/Sofia');
 if (isset($_SESSION['id'])) : ?>
 
 
@@ -29,7 +30,7 @@ if (isset($_SESSION['id'])) : ?>
         <a class="nav-link" href="../add-car.php">Добави нова обява!</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="../report-us.php">Контакт с нас / Докладвай за нередност</a>
       </li>
     </ul>
     <span class="navbar-text">
