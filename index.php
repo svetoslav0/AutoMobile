@@ -14,20 +14,9 @@ if (!isset($_SESSION['id'])){
     header("Location: login.php");
     exit;
 }
-
 include_once('views/header.logged.view.php');
-?>
+$ads_data = Repository::getAll($db, 'ads');
 
-
-<p>
-    <?php
-        var_dump(Repository::getAll($db, 'ads'));
-
-    ?>
-</p>
-
-
-<?php
+include_once ('views/index.view.php');
 include_once('views/footer.view.php');
 ?>
-

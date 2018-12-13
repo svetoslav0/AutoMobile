@@ -3,14 +3,10 @@
 
 html,
 body{
-background-image: url("../Images/alot.jpg");
-background-size: cover;
-background-repeat: no-repeat;
-font-family: 'Numans', sans-serif;
-
- 	background-image: url("../Images/alot.jpg");
- 	font-family: 'Oxygen', sans-serif;
-	background-size: cover;
+    background-size: cover;
+    background: url("../Images/alot.jpg") no-repeat;
+    /*font-family: 'Numans', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
 }
 
 .container{

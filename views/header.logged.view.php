@@ -10,36 +10,29 @@
     spl_autoload_register();
 if (isset($_SESSION['id'])) : ?>
 
-<nav class="navbar navbar-light" style="background-color: #ffdf80;">
-<div style="background-color: lightblue">
-	Welcome,
-    <a href="../profile.php"><?= $_SESSION['first_name'] ?></a>
-    <span style="float: right">
-        <a href="/add-car.php">Add new car advertisement</a>
-		<a href="/logout.php">Logout</a>
-	</span>
-</div>
-</nav>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar w/ text</a>
+  <a class="navbar-brand" href="../index.php"><img src="../Images/logo.png" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../profile.php">
+            <strong>Здравей, <?= $_SESSION['first_name'] ?></strong>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="../add-car.php">Добави нова обява!</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
       </li>
     </ul>
     <span class="navbar-text">
-      Navbar text with an inline element
+      <a href="../logout.php">Изход</a>
     </span>
   </div>
 </nav>
