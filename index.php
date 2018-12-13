@@ -20,11 +20,8 @@ include_once('views/header.logged.view.php');
 
 
 <p>
-	This is index content page
-    <?= var_dump($_SESSION) ?>
     <?php
-    var_dump($_SERVER);
-        var_dump(Repository::getAll($db, 'extras'));
+        var_dump(Repository::getAll($db, 'ads'));
 
     ?>
 </p>

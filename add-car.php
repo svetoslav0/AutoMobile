@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 session_start();
 if (!isset($_SESSION['id'])){
     header('Location: login.php');
@@ -40,6 +40,9 @@ if (isset($_POST['add_car_button'])){
         $power, $volume, $category, $eurostandart, $engine_type,
         $gears, $mileage, $color, $town, $extras, $_FILES['fileToUpload']['name']
     ]);
+
+    header("Location: index.php");
+    ob_end_flush();
 }
 
 

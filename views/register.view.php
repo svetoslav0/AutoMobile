@@ -12,7 +12,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Въведете потребителско име" name="username"/>
+                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Въведете потребителско име" />
                                 </div>
                             </div>
                         </div>
@@ -22,7 +22,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Въведете парола"  name="password"/>
+                                    <input type="password" class="form-control" id="password"  placeholder="Въведете парола"  name="password"/>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Потвърдете паролата" name="confirm_password"/>
+                                    <input type="password" class="form-control" id="confirm"  placeholder="Потвърдете паролата" name="confirm_password"/>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" id="email"  placeholder="Въведете имейла си" name="email"/>
+                                    <input type="text" class="form-control" id="email"  placeholder="Въведете имейла си" name="email"/>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Въведете име" name="first_name"/>
+                                    <input type="text" class="form-control" id="name"  placeholder="Въведете име" name="first_name"/>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Въведете фамилия" name="last_name"/>
+                                    <input type="text" class="form-control" id="name"  placeholder="Въведете фамилия" name="last_name"/>
                                 </div>
                             </div>
                         </div>                        

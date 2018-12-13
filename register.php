@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
 
     if (isset($_SESSION['error'])){
@@ -17,20 +18,20 @@ if (isset($_POST['submit'])){
     $email = $_POST['email'];
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
-
+    $hash = password_hash($password, PASSWORD_DEFAULT);
     validate($username, $password, $confirm_password, $email);
 
     $result = $db->prepare("INSERT INTO users(username, password,  email, first_name, last_name) 
                               VALUES (:username, :password,  :email, :first_name, :last_name)");
     $result->bindParam("username", $username);
-    $result->bindParam("password", password_hash($password, PASSWORD_DEFAULT));
+    $result->bindParam("password", $hash);
     $result->bindParam("email", $email);
     $result->bindParam("first_name", $firstName);
     $result->bindParam("last_name", $lastName);
-
     $result->execute();
 
     header("Location: login.php");
+    ob_end_flush();
 }
 
 function validate($username, $password, $conf_password, $email){
@@ -64,9 +65,10 @@ function validate($username, $password, $conf_password, $email){
         $isValid = false;
     }
 
-
+    /**
     if (!$isValid){
         header("Location: register.php");
         exit;
     }
+     **/
 }

@@ -10,7 +10,6 @@ session_start();
 include_once ('views/header.logged.view.php');
 
 $user_data = Repository::getSome($db, 'users', 'id', $_SESSION['id'])[0];
-var_dump($user_data);
 $username = $user_data->username;
 $first_name = $user_data->first_name;
 $last_name = $user_data->last_name;

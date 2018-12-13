@@ -21,6 +21,6 @@
 <form action="../change_data.php" method="post">
     <input type="submit" name="changeData" value="Редактирай профила" /><br />
 </form>
-<form action="change_pass.php" method="post">
+<form action="../change_pass.php" method="post">
     <input type="submit" name="changePass" value="Промени паролата" /><br />
 </form>

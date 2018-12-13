@@ -18,7 +18,7 @@ index:
 my-cars:
     - CRUD (create, read, update, delete)
 
-profile:
+[DONE!] profile:
     - view all user data
     - update user data
         - email
