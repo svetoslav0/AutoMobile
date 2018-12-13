@@ -55,4 +55,20 @@ class Repository
         $insertValues = implode(',', $insertValues);
         $stmt = $db->query("INSERT INTO {$table}({$columns}) VALUES({$insertValues})");
     }
+
+    public static function update(PDO $db, $table, $columns, $data, $condition, $value){
+        $data = array_map(function ($value){
+            return "'{$value}'";
+        }, $data);
+
+        $setter = [];
+
+        for($i = 0; $i < count($columns); $i++){
+            $setter[] = $columns[$i] . '=' . $data[$i];
+        }
+
+        $setter = implode(', ', $setter);
+
+        $stmt = $db->query("UPDATE {$table} SET {$setter} WHERE {$condition}={$value}");
+    }
 }

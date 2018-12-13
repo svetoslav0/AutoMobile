@@ -7,7 +7,7 @@
  */
 
 session_start();
-include_once ('views/header.view.php');
+include_once('views/header.logged.view.php');
 $user_data = Repository::getSome($db, 'users', 'id', $_SESSION['id'])[0];
 include_once ('views/profile.view.php');
 include_once ('views/footer.view.php');

@@ -15,7 +15,7 @@ if (!isset($_SESSION['id'])){
     exit;
 }
 
-include_once('views/header.view.php');
+include_once('views/header.logged.view.php');
 ?>
 
 

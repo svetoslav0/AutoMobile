@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['id'])){
     header('Location: login.php');
 }
-include_once ('views/header.view.php');
+include_once('views/header.logged.view.php');
 include_once ('views/add-car.view.php');
 
 if (isset($_POST['add_car_button'])){

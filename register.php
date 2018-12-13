@@ -6,7 +6,7 @@
         unset($_SESSION['error']);
     }
 
-include_once('views/header.view.php');
+include_once('views/header.notlogged.view.php');
 include_once ("views/register.view.php");
 include_once ("db_connect.php");
 
