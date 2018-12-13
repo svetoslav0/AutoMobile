@@ -3,6 +3,7 @@
 <head>
 	<title>AutoMobile</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../css/logged.css">
 </head>
 <body>
 <?php

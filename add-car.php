@@ -24,6 +24,8 @@ if (isset($_POST['add_car_button'])){
     $mileage = $_POST['mileage'];
     $color = $_POST['colors'];
     $town = $_POST['towns'];
+    $phone = $_POST['phone'];
+    $description = $_POST['textarea'];
 
     $extras = [];
     $extrasCount = Repository::getRowsCount($db, 'extras');
@@ -38,7 +40,8 @@ if (isset($_POST['add_car_button'])){
     Repository::insert($db, 'ads', [
         $user_id, $brand, $model, $state, $release_year, $price,
         $power, $volume, $category, $eurostandart, $engine_type,
-        $gears, $mileage, $color, $town, $extras, $_FILES['fileToUpload']['name']
+        $gears, $mileage, $color, $town, $extras,
+        $_FILES['fileToUpload']['name'], $phone, $description
     ]);
 
     header("Location: index.php");
