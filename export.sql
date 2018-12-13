@@ -16,6 +16,40 @@
 CREATE DATABASE IF NOT EXISTS `automobile` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `automobile`;
 
+-- Dumping structure for table automobile.ads
+CREATE TABLE IF NOT EXISTS `ads` (
+  `id` int(64) NOT NULL AUTO_INCREMENT,
+  `user_id` int(64) NOT NULL,
+  `brand` varchar(50) COLLATE utf8_bin NOT NULL,
+  `model` varchar(50) COLLATE utf8_bin NOT NULL,
+  `state` varchar(50) COLLATE utf8_bin NOT NULL,
+  `release_year` int(11) unsigned NOT NULL,
+  `price` double(12,2) NOT NULL,
+  `power` int(11) unsigned NOT NULL,
+  `volume` double(6,1) unsigned NOT NULL,
+  `cat_id` int(11) unsigned NOT NULL,
+  `eurostd_id` int(11) unsigned NOT NULL,
+  `engine_id` int(11) unsigned NOT NULL,
+  `gear_id` int(11) unsigned NOT NULL,
+  `mileage` int(50) unsigned NOT NULL,
+  `color_id` int(11) unsigned NOT NULL,
+  `town_id` int(11) unsigned NOT NULL,
+  `extras` varchar(450) COLLATE utf8_bin DEFAULT NULL,
+  `image` varchar(450) COLLATE utf8_bin DEFAULT NULL,
+  `phone` varchar(50) COLLATE utf8_bin NOT NULL,
+  `description` varchar(600) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Dumping data for table automobile.ads: ~2 rows (approximately)
+/*!40000 ALTER TABLE `ads` DISABLE KEYS */;
+INSERT INTO `ads` (`id`, `user_id`, `brand`, `model`, `state`, `release_year`, `price`, `power`, `volume`, `cat_id`, `eurostd_id`, `engine_id`, `gear_id`, `mileage`, `color_id`, `town_id`, `extras`, `image`, `phone`, `description`) VALUES
+	(10, 1, 'Москвич', 'Глиган', 'new_car', 1984, 585.00, 50, 1.6, 1, 1, 1, 1, 1111111, 1, 1, '3,6,8,10', '5a0014ff15e9f9386c66d384.jpg', '0845285541', 'Продавам москвич Алеко от бързи и яростни 7. Много добър автомобил с предно, задно и странично предаване, 4х8, блокаж на диференциала. Стерео инжекция с газ, мас и оцет'),
+	(12, 1, 'BMW', 'e36', 'used_car', 1996, 2500.00, 104, 1.6, 8, 1, 1, 1, 178000, 1, 3, '67', 'VF E36 non M exterior.jpg', '0885157835', 'Всяка 3-та на улицата е такава...'),
+	(14, 25, 'Lora', 'Marcy', 'for_parts', 2008, 99999.00, 1, 0.3, 4, 4, 2, 3, 200111, 26, 24, '5,6,21,23,28,29,40,41,49,50,63,71,76,89,90', '36451507_2012128282155180_6376702132933885952_o.jpg', '089234345', 'Без забележки и без ръжда'),
+	(15, 1, '', '', 'used_car', 0, 0.00, 0, 0.0, 5, 1, 1, 2, 0, 35, 1, '8,13,19,67,70,74,85', 'code-wallpaper-18.png', '', '');
+/*!40000 ALTER TABLE `ads` ENABLE KEYS */;
+
 -- Dumping structure for table automobile.categories
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -23,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Dumping data for table automobile.categories: ~10 rows (approximately)
+-- Dumping data for table automobile.categories: ~9 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`) VALUES
 	(1, 'Ван'),
@@ -45,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `colors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table automobile.colors: ~41 rows (approximately)
+-- Dumping data for table automobile.colors: ~36 rows (approximately)
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
 INSERT INTO `colors` (`id`, `color`) VALUES
 	(1, 'Тъмно син'),
@@ -133,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table automobile.extras: ~0 rows (approximately)
+-- Dumping data for table automobile.extras: ~91 rows (approximately)
 /*!40000 ALTER TABLE `extras` DISABLE KEYS */;
 INSERT INTO `extras` (`id`, `extra`, `type_id`) VALUES
 	(1, 'GPS система за проследяване', 1),
@@ -242,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `extra_types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table automobile.extra_types: ~7 rows (approximately)
+-- Dumping data for table automobile.extra_types: ~6 rows (approximately)
 /*!40000 ALTER TABLE `extra_types` DISABLE KEYS */;
 INSERT INTO `extra_types` (`id`, `extra_type`) VALUES
 	(1, 'Безопасност'),
@@ -261,7 +295,7 @@ CREATE TABLE IF NOT EXISTS `gears` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Dumping data for table automobile.gears: ~3 rows (approximately)
+-- Dumping data for table automobile.gears: ~2 rows (approximately)
 /*!40000 ALTER TABLE `gears` DISABLE KEYS */;
 INSERT INTO `gears` (`id`, `type`) VALUES
 	(1, 'Ръчна'),
@@ -319,14 +353,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Dumping data for table automobile.users: ~3 rows (approximately)
+-- Dumping data for table automobile.users: ~5 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_name`) VALUES
-	(1, 'aladin', '$2y$10$5NkgeQdAHfrhySiF7Zt9deJDKvo4eaUPuexRw1UqDhFOiW8jKoE1y', 'aladin@aladin.bg', 'Geroge', 'Mitkov'),
+	(1, 'aladin', '$2y$10$5NkgeQdAHfrhySiF7Zt9deJDKvo4eaUPuexRw1UqDhFOiW8jKoE1y', 'aladin@aladin.bg', 'Dragan', 'Dimitrova'),
 	(10, 'user123', '$2y$10$xhp24Qt3nrvenu99WQoESufSsr0dHjU4g8yKzh5xF3W', 'user@abv.bg', '', ''),
-	(15, 'admin', '$2y$10$u/GjzEYS8RJ/mYEZlMlIaOWFWdVWijbSeUjJVa7llCCrAsLsvaaVq', 'admin@admin.com', 'Admin', 'Admin');
+	(15, 'admin', '$2y$10$u/GjzEYS8RJ/mYEZlMlIaOWFWdVWijbSeUjJVa7llCCrAsLsvaaVq', 'admin@admin.com', 'Admin', 'Admin'),
+	(16, 'Lora', '$2y$10$M9iY/GmOXz8NImXgXVmLhe6No4teMYz.bWP.8TrSHyG4MxcQ9AasC', 'lora@abv.bg', 'Lora', 'DLora'),
+	(24, 'pesho', '$2y$10$1kDzTa8tQqgJE//qTKQGauqgQBIuwNUvFEukUTRXmj4psVt0SCtra', 'petar.petrov@gmail.com', 'Petar', 'Petrov'),
+	(25, 'bogydarya', '$2y$10$Q2XY5HVigqKU9WZL/oPhNeAUSmpdTvzxxLi9LPFdtGhE9uJ.4ZWcW', 'bogydarya@abv.bg', 'Bogydary', 'Bogydarya');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
