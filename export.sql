@@ -16,6 +16,30 @@
 CREATE DATABASE IF NOT EXISTS `automobile` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `automobile`;
 
+-- Dumping structure for table automobile.admin_messages
+CREATE TABLE IF NOT EXISTS `admin_messages` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `from_id` int(11) unsigned NOT NULL,
+  `title` varchar(255) COLLATE utf8_bin NOT NULL,
+  `message` text COLLATE utf8_bin NOT NULL,
+  `date_sent` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `isSeen` tinyint(2) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- Dumping data for table automobile.admin_messages: ~4 rows (approximately)
+/*!40000 ALTER TABLE `admin_messages` DISABLE KEYS */;
+INSERT INTO `admin_messages` (`id`, `from_id`, `title`, `message`, `date_sent`, `isSeen`) VALUES
+	(6, 1, 'Title one', 'Ами имам дерт', '2018-12-13 21:53:00', 1),
+	(7, 25, 'Tuka imam edin problem', 'Здр кпр', '2018-12-13 21:59:00', 1),
+	(8, 25, '134', 'Здр кпр', '2018-12-13 22:01:00', 1),
+	(9, 25, 'Mnou ste qki', 'asdqweasdzxc', '2018-12-13 23:04:00', 1),
+	(10, 1, 'Title  bee', 'This is some random content', '2018-12-13 23:33:00', 1),
+	(11, 25, 'Има проблем с прозиводството на гумени карета', 'Пиши ми...', '2018-12-13 23:38:54', 1),
+	(12, 25, 'Опа...', 'Амии, опа...', '2018-12-13 23:39:26', 1),
+	(13, 1, 'XAMPP redirects localhost to localhost/bg', 'Абе имам тука един проблем с едно там нещо...', '2018-12-14 00:01:00', 1);
+/*!40000 ALTER TABLE `admin_messages` ENABLE KEYS */;
+
 -- Dumping structure for table automobile.ads
 CREATE TABLE IF NOT EXISTS `ads` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
@@ -39,15 +63,13 @@ CREATE TABLE IF NOT EXISTS `ads` (
   `phone` varchar(50) COLLATE utf8_bin NOT NULL,
   `description` varchar(600) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table automobile.ads: ~2 rows (approximately)
 /*!40000 ALTER TABLE `ads` DISABLE KEYS */;
 INSERT INTO `ads` (`id`, `user_id`, `brand`, `model`, `state`, `release_year`, `price`, `power`, `volume`, `cat_id`, `eurostd_id`, `engine_id`, `gear_id`, `mileage`, `color_id`, `town_id`, `extras`, `image`, `phone`, `description`) VALUES
-	(10, 1, 'Москвич', 'Глиган', 'new_car', 1984, 585.00, 50, 1.6, 1, 1, 1, 1, 1111111, 1, 1, '3,6,8,10', '5a0014ff15e9f9386c66d384.jpg', '0845285541', 'Продавам москвич Алеко от бързи и яростни 7. Много добър автомобил с предно, задно и странично предаване, 4х8, блокаж на диференциала. Стерео инжекция с газ, мас и оцет'),
-	(12, 1, 'BMW', 'e36', 'used_car', 1996, 2500.00, 104, 1.6, 8, 1, 1, 1, 178000, 1, 3, '67', 'VF E36 non M exterior.jpg', '0885157835', 'Всяка 3-та на улицата е такава...'),
-	(14, 25, 'Lora', 'Marcy', 'for_parts', 2008, 99999.00, 1, 0.3, 4, 4, 2, 3, 200111, 26, 24, '5,6,21,23,28,29,40,41,49,50,63,71,76,89,90', '36451507_2012128282155180_6376702132933885952_o.jpg', '089234345', 'Без забележки и без ръжда'),
-	(15, 1, '', '', 'used_car', 0, 0.00, 0, 0.0, 5, 1, 1, 2, 0, 35, 1, '8,13,19,67,70,74,85', 'code-wallpaper-18.png', '', '');
+	(10, 1, 'Москвич', 'Глиган', 'new_car', 1984, 585.00, 50, 1.6, 8, 1, 1, 1, 215000, 17, 1, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21', '5a0014ff15e9f9386c66d384.jpg', '0845285541', 'Продавам москвич Алеко от бързи и яростни 7. Много добър автомобил с предно, задно и странично предаване, 4х8, блокаж на диференциала. Стерео инжекция с газ, мас и оцет'),
+	(12, 1, 'BMW', 'e36', 'used_car', 1996, 2500.00, 104, 1.6, 8, 1, 1, 1, 178000, 1, 3, '67', 'VF E36 non M exterior.jpg', '0885157835', 'Всяка 3-та на улицата е такава...');
 /*!40000 ALTER TABLE `ads` ENABLE KEYS */;
 
 -- Dumping structure for table automobile.categories
@@ -355,10 +377,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Dumping data for table automobile.users: ~5 rows (approximately)
+-- Dumping data for table automobile.users: ~6 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_name`) VALUES
-	(1, 'aladin', '$2y$10$5NkgeQdAHfrhySiF7Zt9deJDKvo4eaUPuexRw1UqDhFOiW8jKoE1y', 'aladin@aladin.bg', 'Dragan', 'Dimitrova'),
+	(1, 'aladin', '$2y$10$5NkgeQdAHfrhySiF7Zt9deJDKvo4eaUPuexRw1UqDhFOiW8jKoE1y', 'aladin@aladin.bg', 'Draganka', 'Dimitrova'),
 	(10, 'user123', '$2y$10$xhp24Qt3nrvenu99WQoESufSsr0dHjU4g8yKzh5xF3W', 'user@abv.bg', '', ''),
 	(15, 'admin', '$2y$10$u/GjzEYS8RJ/mYEZlMlIaOWFWdVWijbSeUjJVa7llCCrAsLsvaaVq', 'admin@admin.com', 'Admin', 'Admin'),
 	(16, 'Lora', '$2y$10$M9iY/GmOXz8NImXgXVmLhe6No4teMYz.bWP.8TrSHyG4MxcQ9AasC', 'lora@abv.bg', 'Lora', 'DLora'),
