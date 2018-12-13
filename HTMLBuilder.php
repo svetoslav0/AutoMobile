@@ -17,4 +17,32 @@ class HTMLBuilder
         $result .= '</select>';
         return $result;
     }
+
+    public static function extrasBuilder($array){
+        $first = [];
+        $second = [];
+        for($i = 0; $i < count($array); $i++){
+            if ($i % 2 == 0){
+                $first[] = $array[$i];
+            }else{
+                $second[] = $array[$i];
+            }
+        }
+
+        $result = "<div class='modal-body row'>";
+        $result .= "<div class='col-md-1'></div>";
+        $result .= "<div class='col-md-3'><ul class='list-group list-group-flush'>";
+        foreach ($first as $item) {
+            $result .= "<li class=\"list-group-item\">" . $item[0]->extra ."</li>";
+        }
+        $result .= "</ul></div>";
+        $result .= "<div class='col-md-3'><ul class='list-group list-group-flush'>";
+        foreach ($second as $item) {
+            $result .= "<li class=\"list-group-item\">" . $item[0]->extra ."</li>";
+        }
+        $result .= "</ul></div>";
+        $result .= "</div>";
+
+        return $result;
+    }
 }

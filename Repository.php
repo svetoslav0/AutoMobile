@@ -10,7 +10,7 @@ class Repository
 {
     public static function getAll(PDO $db, $table, $columns = ['*'], $orderBy = 'id'){
         $columns = implode(', ', $columns);
-        $stmt = $db->query("SELECT {$columns} FROM {$table} ORDER BY {$orderBy}");
+        $stmt = $db->query("SELECT {$columns} FROM {$table} ORDER BY {$orderBy} DESC");
         $result = [];
 
         while($row = $stmt->fetchObject()){
@@ -70,5 +70,20 @@ class Repository
         $setter = implode(', ', $setter);
 
         $stmt = $db->query("UPDATE {$table} SET {$setter} WHERE {$condition}={$value}");
+    }
+
+    public static function delete(PDO $db, $table, $condition, $value){
+        $result = $db->query("DELETE FROM {$table} WHERE {$condition}={$value}");
+    }
+
+    public static function extrasDecoder(PDO $db, $string){
+        $arr = explode(',', $string);
+        $result = [];
+
+        foreach ($arr as $item) {
+            $result[] = Repository::getSome($db, 'extras', 'id', $item);
+        }
+
+        return $result;
     }
 }

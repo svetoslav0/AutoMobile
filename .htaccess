@@ -1,0 +1,2 @@
+RewriteEngine On
+ErrorDocument 404 "<H1>Page not found</H1>"

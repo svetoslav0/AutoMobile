@@ -22,3 +22,12 @@ kbd{
     color: #1a2733;
     background-color: #26e017;
 }
+
+.brand{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.model{
+    font-size: 23px;
+}

@@ -10,4 +10,6 @@ session_start();
 include_once ('views/header.logged.view.php');
 
 $car_id = $_GET['car'];
-var_dump($car_id);
+$car_data = Repository::getSome($db, 'ads', 'id', $car_id)[0];
+
+include_once ('views/view-ad.view.php');
