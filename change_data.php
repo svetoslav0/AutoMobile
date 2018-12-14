@@ -22,9 +22,18 @@ if (isset($_POST['updateData'])){
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
+
+    $_SESSION = [
+        'id' => $_SESSION['id'],
+        'username' => $username,
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'email' => $email
+    ];
     Repository::update($db, 'users',
         ['username', 'first_name', 'last_name', 'email'],
         [$username, $first_name, $last_name, $email],
         'id', $_SESSION['id']);
+
     header("Location: profile.php");
 }
